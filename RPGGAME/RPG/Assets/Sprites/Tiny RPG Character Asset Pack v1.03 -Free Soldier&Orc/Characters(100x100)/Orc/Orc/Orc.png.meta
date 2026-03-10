@@ -153,7 +153,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -208,12 +208,12 @@ TextureImporter:
       name: Orc_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 542
-        width: 24
-        height: 17
+        x: 0
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -230,12 +230,12 @@ TextureImporter:
       name: Orc_1
       rect:
         serializedVersion: 2
-        x: 143
-        y: 542
-        width: 24
-        height: 17
+        x: 100
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: Orc_2
       rect:
         serializedVersion: 2
-        x: 243
-        y: 542
-        width: 24
-        height: 18
+        x: 200
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -274,12 +274,12 @@ TextureImporter:
       name: Orc_3
       rect:
         serializedVersion: 2
-        x: 343
-        y: 542
-        width: 24
-        height: 18
+        x: 300
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -296,12 +296,12 @@ TextureImporter:
       name: Orc_4
       rect:
         serializedVersion: 2
-        x: 443
-        y: 542
-        width: 24
-        height: 17
+        x: 400
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -318,12 +318,12 @@ TextureImporter:
       name: Orc_5
       rect:
         serializedVersion: 2
-        x: 543
-        y: 542
-        width: 24
-        height: 17
+        x: 500
+        y: 500
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -340,12 +340,12 @@ TextureImporter:
       name: Orc_6
       rect:
         serializedVersion: 2
-        x: 43
-        y: 442
-        width: 24
-        height: 17
+        x: 0
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -362,12 +362,12 @@ TextureImporter:
       name: Orc_7
       rect:
         serializedVersion: 2
-        x: 143
-        y: 443
-        width: 24
-        height: 17
+        x: 100
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -384,12 +384,12 @@ TextureImporter:
       name: Orc_8
       rect:
         serializedVersion: 2
-        x: 243
-        y: 442
-        width: 24
-        height: 17
+        x: 200
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -406,12 +406,12 @@ TextureImporter:
       name: Orc_9
       rect:
         serializedVersion: 2
-        x: 343
-        y: 442
-        width: 24
-        height: 16
+        x: 300
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -428,12 +428,12 @@ TextureImporter:
       name: Orc_10
       rect:
         serializedVersion: 2
-        x: 443
-        y: 442
-        width: 24
-        height: 17
+        x: 400
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -450,12 +450,12 @@ TextureImporter:
       name: Orc_11
       rect:
         serializedVersion: 2
-        x: 543
-        y: 443
-        width: 24
-        height: 17
+        x: 500
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -472,12 +472,12 @@ TextureImporter:
       name: Orc_12
       rect:
         serializedVersion: 2
-        x: 643
-        y: 442
-        width: 24
-        height: 17
+        x: 600
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -494,12 +494,12 @@ TextureImporter:
       name: Orc_13
       rect:
         serializedVersion: 2
-        x: 743
-        y: 442
-        width: 24
-        height: 16
+        x: 700
+        y: 400
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -516,12 +516,12 @@ TextureImporter:
       name: Orc_14
       rect:
         serializedVersion: 2
-        x: 43
-        y: 342
-        width: 24
-        height: 17
+        x: 0
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -538,12 +538,12 @@ TextureImporter:
       name: Orc_15
       rect:
         serializedVersion: 2
-        x: 143
-        y: 342
-        width: 21
-        height: 21
+        x: 100
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -560,12 +560,12 @@ TextureImporter:
       name: Orc_16
       rect:
         serializedVersion: 2
-        x: 235
-        y: 342
-        width: 21
-        height: 26
+        x: 200
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -582,12 +582,12 @@ TextureImporter:
       name: Orc_17
       rect:
         serializedVersion: 2
-        x: 344
-        y: 337
-        width: 30
-        height: 28
+        x: 300
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -604,12 +604,12 @@ TextureImporter:
       name: Orc_18
       rect:
         serializedVersion: 2
-        x: 444
-        y: 337
-        width: 30
-        height: 22
+        x: 400
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -626,12 +626,12 @@ TextureImporter:
       name: Orc_19
       rect:
         serializedVersion: 2
-        x: 544
-        y: 337
-        width: 28
-        height: 21
+        x: 500
+        y: 300
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -648,12 +648,12 @@ TextureImporter:
       name: Orc_20
       rect:
         serializedVersion: 2
-        x: 43
-        y: 242
-        width: 24
-        height: 17
+        x: 0
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -670,12 +670,12 @@ TextureImporter:
       name: Orc_21
       rect:
         serializedVersion: 2
-        x: 135
-        y: 242
-        width: 21
-        height: 26
+        x: 100
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -692,12 +692,12 @@ TextureImporter:
       name: Orc_22
       rect:
         serializedVersion: 2
-        x: 235
-        y: 242
-        width: 21
-        height: 25
+        x: 200
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -714,12 +714,12 @@ TextureImporter:
       name: Orc_23
       rect:
         serializedVersion: 2
-        x: 344
-        y: 233
-        width: 31
-        height: 32
+        x: 300
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -736,12 +736,12 @@ TextureImporter:
       name: Orc_24
       rect:
         serializedVersion: 2
-        x: 444
-        y: 233
-        width: 24
-        height: 27
+        x: 400
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -758,12 +758,12 @@ TextureImporter:
       name: Orc_25
       rect:
         serializedVersion: 2
-        x: 544
-        y: 236
-        width: 19
-        height: 22
+        x: 500
+        y: 200
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -780,12 +780,12 @@ TextureImporter:
       name: Orc_26
       rect:
         serializedVersion: 2
-        x: 41
-        y: 142
-        width: 25
-        height: 17
+        x: 0
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -802,12 +802,12 @@ TextureImporter:
       name: Orc_27
       rect:
         serializedVersion: 2
-        x: 141
-        y: 142
-        width: 25
-        height: 17
+        x: 100
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -824,12 +824,12 @@ TextureImporter:
       name: Orc_28
       rect:
         serializedVersion: 2
-        x: 241
-        y: 142
-        width: 25
-        height: 17
+        x: 200
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -846,12 +846,12 @@ TextureImporter:
       name: Orc_29
       rect:
         serializedVersion: 2
-        x: 341
-        y: 142
-        width: 25
-        height: 17
+        x: 300
+        y: 100
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -868,12 +868,12 @@ TextureImporter:
       name: Orc_30
       rect:
         serializedVersion: 2
-        x: 43
-        y: 42
-        width: 24
-        height: 17
+        x: 0
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -890,12 +890,12 @@ TextureImporter:
       name: Orc_31
       rect:
         serializedVersion: 2
-        x: 139
-        y: 44
-        width: 28
-        height: 16
+        x: 100
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -912,12 +912,12 @@ TextureImporter:
       name: Orc_32
       rect:
         serializedVersion: 2
-        x: 236
-        y: 47
-        width: 17
-        height: 15
+        x: 200
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -934,12 +934,12 @@ TextureImporter:
       name: Orc_33
       rect:
         serializedVersion: 2
-        x: 255
-        y: 43
-        width: 11
-        height: 12
+        x: 300
+        y: 0
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -952,55 +952,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Orc_34
-      rect:
-        serializedVersion: 2
-        x: 335
-        y: 43
-        width: 17
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 68af46e5947386e20800000000000000
-      internalID: 3343983511578409606
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Orc_35
-      rect:
-        serializedVersion: 2
-        x: 355
-        y: 43
-        width: 11
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af00633f966159ed0800000000000000
-      internalID: -2407993781451882246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 761f9b4421310c84a913180b29399174
     internalID: 0
     vertices: []
     indices: 
@@ -1008,7 +964,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":6.0},"gridSpriteSize":{"x":100.0,"y":100.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Orc_0: 3799508404887519019
       Orc_1: -9003958548615516068
@@ -1038,8 +996,6 @@ TextureImporter:
       Orc_31: 6038443146981578319
       Orc_32: -6751517663992241325
       Orc_33: 1925807571168068822
-      Orc_34: 3343983511578409606
-      Orc_35: -2407993781451882246
       Orc_4: 2090174075836721236
       Orc_5: -104981853600970874
       Orc_6: 2897101806617490989
