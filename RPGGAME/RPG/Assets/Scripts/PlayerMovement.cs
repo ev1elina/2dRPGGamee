@@ -17,11 +17,19 @@ public class PlayerMovement : MonoBehaviour
 	private void Awake()
 	{
 		_rb = GetComponent<Rigidbody2D>();
+		
+		if (MovementReference == null)
+		{
+			Debug.LogError("MovementReference is not assigned on " + gameObject.name + "! Assign it in the Inspector.");
+			return;
+		}
 		_movementAction = MovementReference.action;
 	}
 
 	private void FixedUpdate()
 	{
+		if (_movementAction == null) return;
+		
 		Vector2 movement = _movementAction.ReadValue<Vector2>().normalized;
 
 		MovementAnimation(movement);
