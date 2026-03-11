@@ -11,20 +11,20 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 5314647640560480254}
-    m_Position: {x: 319.04834, y: 54.028183, z: 0}
+    m_Position: {x: 40, y: 310, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3553699313305152544}
-    m_Position: {x: 370, y: 160, z: 0}
+    m_Position: {x: 350, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4839971633853742832}
-    m_Position: {x: 320, y: -20, z: 0}
+    m_Position: {x: 250, y: -40, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -8107778309374981762}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_AnyStatePosition: {x: 60, y: -40, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -208,7 +208,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -1806683258868422814, guid: 27e9bb8e316e0db459f25e646fc893dc, type: 3}
+    m_Motion: {fileID: 7400000, guid: 93d85ab3fd855714a84c1f5150ff180c, type: 2}
     m_Threshold: 0
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -216,7 +216,7 @@ BlendTree:
     m_DirectBlendParameter: xinput
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 6827750744140716698, guid: d16ad54c76ea3e84cbdd56c603fdc24f, type: 3}
+    m_Motion: {fileID: 7400000, guid: 0f460650125dd5b4f98bfb2b5d0280c0, type: 2}
     m_Threshold: 0.33333334
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -224,7 +224,7 @@ BlendTree:
     m_DirectBlendParameter: xinput
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 3889863345743210074, guid: 9a7ea121621c12d4099858d8ee952689, type: 3}
+    m_Motion: {fileID: 7400000, guid: 5ee7406c912bf7543a782b17a64ad5d2, type: 2}
     m_Threshold: 0.6666667
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -232,7 +232,7 @@ BlendTree:
     m_DirectBlendParameter: xinput
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -785553805779042284, guid: 0d4b98639b70df34eb5fd812c675c93e, type: 3}
+    m_Motion: {fileID: 7400000, guid: a8fc2aeebb8b6ca4aa567f9092109d35, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1

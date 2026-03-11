@@ -12,19 +12,33 @@ public class movement : MonoBehaviour
     private float lastX = 0f;
     private float lastY = -1f; 
     private bool isAttacking = false;
+    private bool inputLocked = false;
+    private bool hasDealtDamage = false;
+    private PlayerAttack playerAttack;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        playerAttack = GetComponent<PlayerAttack>();
     }
 
     void Update()
     {
+        if (inputLocked) return;
        
         if (isAttacking)
         {
             AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+            // deal damage at 40% through the attack animation
+            if (!hasDealtDamage && stateInfo.IsTag("Attack") && stateInfo.normalizedTime >= 0.4f)
+            {
+                hasDealtDamage = true;
+                if (playerAttack != null)
+                    playerAttack.DealDamage();
+            }
+
             if (!stateInfo.IsTag("Attack") && stateInfo.normalizedTime >= 0)
             {
                 isAttacking = false;
@@ -64,6 +78,7 @@ public class movement : MonoBehaviour
     void Attack()
     {
         isAttacking = true;
+        hasDealtDamage = false;
         anim.SetTrigger("attack");
         anim.SetBool("isMoving", false);
     }
@@ -74,9 +89,20 @@ public class movement : MonoBehaviour
         isAttacking = false;
     }
 
+    public void SetInputLocked(bool locked)
+    {
+        inputLocked = locked;
+        if (locked)
+        {
+            inputX = 0;
+            inputY = 0;
+            anim.SetBool("isMoving", false);
+        }
+    }
+
     void FixedUpdate()
     {
-        if (isAttacking) return;
+        if (isAttacking || inputLocked) return;
         
         Vector2 movement = new Vector2(inputX, inputY).normalized;
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
