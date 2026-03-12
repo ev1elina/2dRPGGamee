@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
     private Rigidbody2D rb;
     private bool isDead;
     private bool isInvincible;
+    private PlayerHealthBar healthBar;
+    private DamageFlash damageFlash;
 
     [SerializeField] private float invincibilityTime = 0.5f;
     [SerializeField] private float knockbackForce = 3f;
@@ -24,6 +26,11 @@ public class PlayerHealth : MonoBehaviour
         playerMovement = GetComponent<movement>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        healthBar = GetComponentInChildren<PlayerHealthBar>();
+        damageFlash = FindAnyObjectByType<DamageFlash>();
+
+        if (healthBar != null)
+            healthBar.SetMaxHealth(maxHealth);
     }
 
     public void TakeDamage(int damage)
@@ -31,6 +38,16 @@ public class PlayerHealth : MonoBehaviour
         if (isDead || isInvincible) return;
 
         currentHealth -= damage;
+
+        // play player hurt SFX
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.Play("player_hurt");
+
+        if (healthBar != null)
+            healthBar.SetHealth(currentHealth);
+
+        if (damageFlash != null)
+            damageFlash.Flash((float)currentHealth / maxHealth);
 
         if (currentHealth <= 0)
         {
@@ -104,6 +121,16 @@ public class PlayerHealth : MonoBehaviour
 
         foreach (Collider2D col in GetComponents<Collider2D>())
             col.enabled = false;
+    }
+
+    // Heal the player by `amount`. Clamps to maxHealth and updates UI.
+    public void Heal(int amount)
+    {
+        if (isDead) return;
+
+        currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
+        if (healthBar != null)
+            healthBar.SetHealth(currentHealth);
     }
 
     public bool IsDead()

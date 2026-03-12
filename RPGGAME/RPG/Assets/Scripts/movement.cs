@@ -14,7 +14,12 @@ public class movement : MonoBehaviour
     private bool isAttacking = false;
     private bool inputLocked = false;
     private bool hasDealtDamage = false;
+    private bool attackBuffered = false;
+    private float attackTimer = 0f;
+    private float attackDamageTime = 0.15f; // deal damage this many seconds into attack
+    private float attackDuration = 0.4f; // total attack lock time
     private PlayerAttack playerAttack;
+    private bool walkingSfxPlaying = false;
 
     void Start()
     {
@@ -29,19 +34,28 @@ public class movement : MonoBehaviour
        
         if (isAttacking)
         {
-            AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+            attackTimer += Time.deltaTime;
 
-            // deal damage at 40% through the attack animation
-            if (!hasDealtDamage && stateInfo.IsTag("Attack") && stateInfo.normalizedTime >= 0.4f)
+            // deal damage at the right moment
+            if (!hasDealtDamage && attackTimer >= attackDamageTime)
             {
                 hasDealtDamage = true;
                 if (playerAttack != null)
                     playerAttack.DealDamage();
             }
 
-            if (!stateInfo.IsTag("Attack") && stateInfo.normalizedTime >= 0)
+            // end attack after duration
+            if (attackTimer >= attackDuration)
             {
                 isAttacking = false;
+
+                // if player buffered another attack, fire it immediately
+                if (attackBuffered)
+                {
+                    attackBuffered = false;
+                    Attack();
+                    return;
+                }
             }
         }
         
@@ -51,6 +65,11 @@ public class movement : MonoBehaviour
             if (!isAttacking)
             {
                 Attack();
+            }
+            else
+            {
+                // buffer the next attack
+                attackBuffered = true;
             }
         }
         
@@ -73,14 +92,52 @@ public class movement : MonoBehaviour
         
         bool isMoving = (inputX != 0 || inputY != 0);
         anim.SetBool("isMoving", isMoving);
+
+        // play/stop looping walk SFX
+        if (SoundManager.Instance != null)
+        {
+            if (isMoving && !isAttacking && !inputLocked)
+            {
+                if (!walkingSfxPlaying)
+                {
+                    SoundManager.Instance.PlayLoop("walk");
+                    walkingSfxPlaying = true;
+                }
+            }
+            else
+            {
+                if (walkingSfxPlaying)
+                {
+                    SoundManager.Instance.StopLoop("walk");
+                    walkingSfxPlaying = false;
+                }
+            }
+        }
     }
     
     void Attack()
     {
         isAttacking = true;
         hasDealtDamage = false;
+        attackBuffered = false;
+        attackTimer = 0f;
+
+        // lock in the facing direction for the hitbox BEFORE the animation starts
+        if (playerAttack != null)
+            playerAttack.SetAttackDirection(lastX, lastY);
+
+        // play attack sound (named clip in SoundManager). tries common keys.
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.Play("player_attack");
+            SoundManager.Instance.Play("attack");
+        }
+
         anim.SetTrigger("attack");
         anim.SetBool("isMoving", false);
+
+        // stop movement instantly
+        rb.linearVelocity = Vector2.zero;
     }
     
     
