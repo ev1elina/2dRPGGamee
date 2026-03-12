@@ -3,15 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -41,20 +42,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: floor
-    uniqueID: 1743148015
+  - name: Entities
+    uniqueID: 1474545829
     locked: 0
-  - name: black
-    uniqueID: 4181541611
+  - name: Player
+    uniqueID: 1214631483
     locked: 0
-  - name: walls
-    uniqueID: 1241649255
-    locked: 0
-  - name: deco
-    uniqueID: 64544867
-    locked: 0
-  - name: deco2
-    uniqueID: 3040655223
+  - name: Enemy
+    uniqueID: 3130434057
     locked: 0
   m_RenderingLayers:
   - Default
