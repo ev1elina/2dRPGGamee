@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     private bool isInvincible;
     private PlayerHealthBar healthBar;
     private DamageFlash damageFlash;
+    private BloodSplash bloodSplash;
 
     [SerializeField] private float invincibilityTime = 0.5f;
     [SerializeField] private float knockbackForce = 3f;
@@ -28,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         healthBar = GetComponentInChildren<PlayerHealthBar>();
         damageFlash = FindAnyObjectByType<DamageFlash>();
+        bloodSplash = FindAnyObjectByType<BloodSplash>();
 
         if (healthBar != null)
             healthBar.SetMaxHealth(maxHealth);
@@ -48,6 +50,9 @@ public class PlayerHealth : MonoBehaviour
 
         if (damageFlash != null)
             damageFlash.Flash((float)currentHealth / maxHealth);
+
+        if (bloodSplash != null)
+            bloodSplash.Splash();
 
         if (currentHealth <= 0)
         {

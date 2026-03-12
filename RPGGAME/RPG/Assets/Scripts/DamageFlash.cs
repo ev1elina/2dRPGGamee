@@ -10,6 +10,7 @@ public class DamageFlash : MonoBehaviour
     [SerializeField] private float maxAlpha = 0.7f;    // low health = intense red
 
     private Coroutine flashRoutine;
+    public BloodSplash bloodSplash;
 
     public void Flash(float healthPercent)
     {
@@ -20,6 +21,11 @@ public class DamageFlash : MonoBehaviour
         if (flashRoutine != null)
             StopCoroutine(flashRoutine);
         flashRoutine = StartCoroutine(FlashRoutine(flashColor));
+
+        if (bloodSplash == null)
+            bloodSplash = FindAnyObjectByType<BloodSplash>();
+        if (bloodSplash != null)
+            bloodSplash.Splash();
     }
 
     IEnumerator FlashRoutine(Color flashColor)
