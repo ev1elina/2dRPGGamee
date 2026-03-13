@@ -1,120 +1,4 @@
-using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
 
-public class BloodSplash : MonoBehaviour
-{
-    public RectTransform splatParent;
-    public int minBlobs = 3;
-    public int maxBlobs = 6;
-    public int minSize = 128;
-    public int maxSize = 256;
-    public float lifetime = 1.2f;
-
-    void Start()
-    {
-        if (splatParent == null)
-        {
-            var df = FindAnyObjectByType<DamageFlash>();
-            if (df != null && df.flashImage != null)
-            {
-                var canvas = df.flashImage.canvas;
-                if (canvas != null)
-                    splatParent = canvas.transform as RectTransform;
-            }
-        }
-    }
-
-    public void Splash()
-    {
-        if (splatParent == null) return;
-        StartCoroutine(SplashRoutine());
-    }
-
-    IEnumerator SplashRoutine()
-    {
-        int count = Random.Range(minBlobs, maxBlobs + 1);
-        for (int i = 0; i < count; i++)
-        {
-            CreateSplat();
-            yield return new WaitForSeconds(0.03f);
-        }
-    }
-
-    void CreateSplat()
-    {
-        int size = Random.Range(minSize, maxSize + 1);
-        Texture2D tex = new Texture2D(size, size, TextureFormat.ARGB32, false);
-        tex.filterMode = FilterMode.Bilinear;
-        Color clear = new Color(0, 0, 0, 0);
-        Color[] cols = new Color[size * size];
-        for (int p = 0; p < cols.Length; p++) cols[p] = clear;
-
-        int blobs = Random.Range(3, 6);
-        for (int b = 0; b < blobs; b++)
-        {
-            float cx = Random.Range(0.2f, 0.8f) * size;
-            float cy = Random.Range(0.2f, 0.8f) * size;
-            float r = Random.Range(size * 0.12f, size * 0.4f);
-            for (int y = 0; y < size; y++)
-            {
-                for (int x = 0; x < size; x++)
-                {
-                    float dx = x - cx; float dy = y - cy;
-                    float d = Mathf.Sqrt(dx * dx + dy * dy);
-                    if (d < r)
-                    {
-                        float t = 1f - (d / r);
-                        float alpha = t * Random.Range(0.35f, 0.9f);
-                        int idx = y * size + x;
-                        Color prev = cols[idx];
-                        float outA = prev.a + alpha * (1 - prev.a);
-                        Color blood = new Color(0.6f, 0f, 0f, outA);
-                        cols[idx] = blood;
-                    }
-                }
-            }
-        }
-
-        tex.SetPixels(cols);
-        tex.Apply();
-
-        Sprite sprite = Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), 100f);
-
-        GameObject go = new GameObject("BloodSplat", typeof(RectTransform));
-        go.transform.SetParent(splatParent, false);
-        var img = go.AddComponent<Image>();
-        img.sprite = sprite;
-        img.raycastTarget = false;
-        img.color = Color.white;
-
-        RectTransform rt = go.GetComponent<RectTransform>();
-        Vector2 parentSize = splatParent.rect.size;
-        Vector2 anchored = new Vector2(Random.Range(-parentSize.x / 2f, parentSize.x / 2f), Random.Range(-parentSize.y / 2f, parentSize.y / 2f));
-        rt.anchoredPosition = anchored;
-        float scale = Random.Range(0.4f, 1.2f);
-        rt.sizeDelta = new Vector2(size * scale, size * scale);
-        rt.localRotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
-
-        StartCoroutine(FadeAndDestroy(img, tex, sprite, lifetime));
-    }
-
-    IEnumerator FadeAndDestroy(Image img, Texture2D tex, Sprite sprite, float life)
-    {
-        float elapsed = 0f;
-        Color start = img.color;
-        while (elapsed < life)
-        {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / life);
-            img.color = Color.Lerp(start, new Color(start.r, start.g, start.b, 0f), t);
-            yield return null;
-        }
-        if (img != null && img.gameObject != null) Destroy(img.gameObject);
-        if (sprite != null) Destroy(sprite);
-        if (tex != null) Destroy(tex);
-    }
-}
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -173,7 +57,6 @@ public class BloodSplash : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            // procedural texture size (keep small to avoid memory churn)
             int size = Random.Range(128, 384);
             Texture2D tex = GenerateSplatTexture(size, size);
             Sprite sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100f);
@@ -190,10 +73,8 @@ public class BloodSplash : MonoBehaviour
             rt.anchoredPosition = new Vector2(Random.Range(-Screen.width / 2, Screen.width / 2), Random.Range(-Screen.height / 2, Screen.height / 2));
             rt.localRotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
 
-            // animate: small pop then fade out
             StartCoroutine(AnimateAndCleanup(img, sprite, tex, duration));
 
-            // seed small delay between splats for nicer distribution
             yield return new WaitForSeconds(0.02f);
         }
     }
@@ -239,14 +120,11 @@ public class BloodSplash : MonoBehaviour
                 float dy = y - center.y;
                 float dist = Mathf.Sqrt(dx * dx + dy * dy);
 
-                // base circular falloff
                 float baseAlpha = Mathf.Clamp01(1f - (dist / maxR));
 
-                // add perlin noise to make ragged edges
                 float n = Mathf.PerlinNoise((x + Random.value * 1000f) / (w * noiseScale), (y + Random.value * 1000f) / (h * noiseScale));
                 float alpha = baseAlpha * Mathf.Pow(n, 0.8f);
 
-                // sprinkle some tiny droplets
                 if (Random.value < 0.002f) alpha = 1f;
 
                 Color c = new Color(1f, 0f, 0f, alpha);
